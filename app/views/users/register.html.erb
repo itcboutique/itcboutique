@@ -1,0 +1,9 @@
+<h1>Register</h1>
+<p>Register on ITC Boutique</p>
+<%= form_tag(:action => "register") do %>
+  <%= render :partial => "form" %>
+    <div style="padding-left:210px;">
+      <%= submit_tag("Submit") %>
+      <input type="reset" value="Clear"/>
+    </div>
+<% end %>

@@ -1,10 +1,5 @@
-<div style="text-align:right;">
-  Welcome, you are logged in as <b><%= current_user.firstname %></b>
-  <%= link_to "Logout", :controller => "login", :action => "logout" %>
-</div>
-  <!-- END:stylesheet -->
-<%= javascript_include_tag "application" %>
-
+<!-- END:stylesheet -->
+  <%= javascript_include_tag :defaults %>
 <div id="flash-error" class="flash-error" style="display: none"></div>
 <div id="flash-notice" class="flash-info" style="display: none"></div>
 
@@ -40,3 +35,4 @@ charset=iso-8859-1" />
 </div>
 </body>
 </html>
+ 

@@ -1,10 +1,22 @@
 Rails.application.routes.draw do
-  get 'static_pages/help'
 
-  get 'static_pages/home'
-  
-  get 'static_pages/about'
+  get 'stores/store'
 
+  get 'products/product'
+
+  get 'categories/category'
+
+  get 'users/login'
+
+ #get "users/new" 
+ #get 'static_pages#home' 
+ # get 'categories#list' 
+#root :to => 'users/login'
+ 
+ #match '/register', to: 'users#register', via: 'get' 
+ #match '/help', to: 'static_pages#help', via: 'get' 
+ #match '/about', to: 'static_pages#about', via: 'get' 
+ #match '/contact', to: 'static_pages#contact', via: 'get'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
