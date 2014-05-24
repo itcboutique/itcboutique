@@ -11,12 +11,12 @@ class Customer < ActiveRecord::Base
 
   # Return Admin user.
   def self.administrator
-    User.find(:first, :conditions => "admin = true")
+    Customer.find(:first, :conditions => "admin = true")
   end
 
 
   def self.try_to_login(username, password)
-    user = User.find(:first, :conditions => ["email=?", username])
+    user = Customer.find(:first, :conditions => ["email=?", username])
     return false unless user
     # Check the passsword.
     if user.check_password(password)
@@ -26,10 +26,12 @@ class Customer < ActiveRecord::Base
     end
   end
 
+  #Decrypt password
   def check_password(password)
     return Digest::SHA256.hexdigest(password.to_s) == self.password
   end
 
+  #Encrypt password
   def password=(pass)
     self[:password] = Digest::SHA256.hexdigest(pass)
   end

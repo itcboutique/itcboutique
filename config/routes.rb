@@ -1,17 +1,26 @@
 Rails.application.routes.draw do
 
-  get 'stores/store'
+#root :to => 'users/login'
+get "login/login" => "login#login"
 
-  get 'products/product'
+match ':controller(/:action(/:id))(.:format)', via: [:get, :post]
 
-  get 'categories/category'
+#get "stores/store" => "stores#store"
 
-  get 'users/login'
+ # get 'stores/store'
+
+  #get 'products/product'
+
+  #get 'categories/category'
+
+  
 
  #get "users/new" 
  #get 'static_pages#home' 
  # get 'categories#list' 
 #root :to => 'users/login'
+
+
  
  #match '/register', to: 'users#register', via: 'get' 
  #match '/help', to: 'static_pages#help', via: 'get' 

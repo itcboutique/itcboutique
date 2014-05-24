@@ -16,7 +16,7 @@ class LoginController < ApplicationController
         if user.admin?
           redirect_to :controller => "categories"
         else
-          redirect_to :controller => "store"
+          redirect_to :controller => "categories"
         end
       else
         flash.now[:notice] = "Invalid username or password"
@@ -35,12 +35,12 @@ class LoginController < ApplicationController
   # Register new user.
   def register
     if request.post?
-      @user = User.new(params[:user])
+      @user = Customer.new(params[:user])
       @user.password = params[:password]
       if @user.save
         flash[:notice] = "You profile has been created successfully"
         session[:user_id] = @user.id
-        redirect_to :controller => "store"
+        redirect_to :controller => "stores"
       else
         render :action => 'register'
       end

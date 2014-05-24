@@ -1,4 +1,4 @@
-require 'billing/sale_invoice'
+#require 'billing/sale_invoice'
 class StoresController < ApplicationController
   skip_before_filter :check_authentication, :check_authorization, :except => [:checkout, :complete_order_successfully]
   skip_before_filter :verify_authenticity_token, :only => [:complete_order_successfully]
